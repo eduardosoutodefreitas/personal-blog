@@ -2,6 +2,7 @@ import { defineDocumentType, makeSource } from 'contentlayer/source-files'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
+import readingTime from 'reading-time';
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {
@@ -9,6 +10,7 @@ const computedFields = {
         type: 'string',
         resolve: (doc) => `/${doc._raw.flattenedPath}`
     },
+    readingTime: { type: 'json', resolve: (doc) => readingTime(doc.body.raw) },
     slugAsParams: {
         type: 'string',
         resolve: (doc) => doc._raw.flattenedPath.split("/").slice(1).join("/")
@@ -29,7 +31,6 @@ export const Post = defineDocumentType(() => ({
         },
         date: { type: 'date', required: true },
         tags: { type: 'list', of: { type: 'string' } },
-        readingTime: { type: 'number', required: true },
         image: {
             type: "string",
             required: true,

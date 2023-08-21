@@ -22,7 +22,7 @@ const PostCard = ({ post }: PostCardProps) => {
                 }
                 <h3 className="font-special font-bold">{post.title}</h3>
                 <p className="text-darkGray mt-1 mb-3 text-sm">{post.description}</p>
-                <PostDetails date={formatedDate} readingTime={post.readingTime} />
+                <PostDetails date={formatedDate} readingTime={Math.ceil(post.readingTime.minutes)} />
             </div>
 
         </article>
