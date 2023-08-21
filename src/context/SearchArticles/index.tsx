@@ -1,21 +1,18 @@
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+'use client'
+import { createContext, useState, useEffect, ReactNode } from 'react';
 import { Post, allPosts } from '../../../.contentlayer/generated';
 
 
 interface ISearchArticles {
     searchTerm: string;
     setSearchTerm: (term: string) => void;
-    selectedTag: string;
-    setSelectedTag: (tag: string) => void;
     filteredPosts: Post[];
 }
 
 export const SearchArticlesContext = createContext<ISearchArticles>({
     filteredPosts: [],
     searchTerm: '',
-    selectedTag: '',
     setSearchTerm: () => { },
-    setSelectedTag: () => { }
 });
 
 interface SearchArticlesProviderProps {
@@ -24,23 +21,20 @@ interface SearchArticlesProviderProps {
 
 const SearchArticlesProvider: React.FC<SearchArticlesProviderProps> = ({ children }) => {
     const [searchTerm, setSearchTerm] = useState('');
-    const [selectedTag, setSelectedTag] = useState('');
     const [filteredPosts, setFilteredPosts] = useState<Post[]>([]);
 
 
     useEffect(() => {
         // Filter posts based on search term and selected tag
         const filtered = allPosts.filter(post =>
-            (post.title.toLowerCase().includes(searchTerm.toLowerCase()) || post.tags?.includes(selectedTag))
+            (post.title.toLowerCase().includes(searchTerm.toLowerCase()) || post.description?.toLowerCase().includes(searchTerm.toLowerCase()))
         );
         setFilteredPosts(filtered);
-    }, [searchTerm, selectedTag]);
+    }, [searchTerm]);
 
     const contextValue: ISearchArticles = {
         searchTerm,
         setSearchTerm,
-        selectedTag,
-        setSelectedTag,
         filteredPosts,
     };
 
