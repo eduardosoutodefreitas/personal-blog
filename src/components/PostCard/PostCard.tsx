@@ -1,10 +1,8 @@
 import Image from "next/image"
-import { MdOutlineCalendarMonth } from 'react-icons/md'
-import { AiOutlineClockCircle } from 'react-icons/ai'
 import { formatDate } from "@/services/formatDate"
 import { Post } from "../../../.contentlayer/generated/types"
-import PostTags from "./PostTags"
 import PostDetails from "./PostDetails"
+import Tag from "@/app/components/Tag"
 interface PostCardProps {
     post: Post
 }
@@ -18,7 +16,13 @@ const PostCard = ({ post }: PostCardProps) => {
             </div>
             <div className="p-3 pb-5">
                 {
-                    post.tags && <PostTags tags={post.tags} />
+                    post.tags && (
+                        <div className="flex items-center gap-5 w-full mb-3 ">
+                            {post.tags.map(tag => (
+                                <Tag key={tag} tag={tag} />
+                            ))}
+                        </div>
+                    )
                 }
                 <h3 className="font-special font-bold">{post.title}</h3>
                 <p className="text-darkGray mt-1 mb-3 text-sm">{post.description}</p>
