@@ -9,6 +9,7 @@ interface PostCardProps {
 const PostCard = ({ post }: PostCardProps) => {
     const formatedDate = formatDate(post.date)
     const formatedReadingTime = Math.ceil(post.readingTime.minutes)
+
     return (
         <article className="min-w-[285px] w-full md:w-[45%] shadow-md rounded-md">
             <div className="w-full h-64 md:h-56 lg:h-48 relative overflow-hidden rounded-t-md">
@@ -25,7 +26,7 @@ const PostCard = ({ post }: PostCardProps) => {
                     )
                 }
                 <h3 className="font-special font-bold">{post.title}</h3>
-                <p className="text-darkGray mt-1 mb-3 text-sm">{post.description}</p>
+                <p className="text-darkGray dark:text-secundaryDark mt-1 mb-3 text-sm">{post.description}</p>
                 <PostDetails date={formatedDate} readingTime={formatedReadingTime} />
             </div>
 

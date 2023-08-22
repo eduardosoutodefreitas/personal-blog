@@ -9,10 +9,12 @@ const config: Config = {
   theme: {
     extend: {
      colors: {
-      primaryDark: '#090909',
+      primary: '#090909',
+      primaryDark: '#FEFEFE',
+      secundaryDark: "#F8F8F8",
       specialBlue: "#00C9A5",
       ligthGray: "#434343",
-      darkGray: "#303030"
+      darkGray: "#303030",
      },
      fontFamily: {
       poppins: ['var(--font-poppins)'],
@@ -21,5 +23,6 @@ const config: Config = {
     },
   },
   plugins: [require('@tailwindcss/typography')],
+  darkMode: "class"
 }
 export default config

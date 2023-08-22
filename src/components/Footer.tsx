@@ -9,13 +9,13 @@ const Footer = () => {
                     <Link href="/" className="text-xl font-special font-black">
                         <span className="text-specialBlue">Edu</span>Cation
                     </Link>
-                    <p className="text-darkGray text-sm">Blog pessoal de <a href="https://github.com/eduardosoutodefreitas" target="_blank" className="font-semibold">Eduardo</a>
+                    <p className="text-darkGray dark:text-secundaryDark text-sm">Blog pessoal de <a href="https://github.com/eduardosoutodefreitas" target="_blank" className="font-semibold">Eduardo</a>
                     </p>
                 </div>
                 <div>
                     <h3 className="text-lg font-semibold">Links</h3>
                     <nav>
-                        <ul className="space-y-1 text-darkGray text-sm">
+                        <ul className="space-y-1 dark:text-secundaryDark text-darkGray text-sm">
                             <li>
                                 <Link href="/">Home</Link>
                             </li>
@@ -45,7 +45,7 @@ const Footer = () => {
             </div>
             <hr className="bg-darkGray my-8" />
 
-            <p className="text-darkGray text-sm text-center">
+            <p className="text-darkGray dark:text-secundaryDark text-sm text-center">
                 Todos os direitos reseverdos © Eduardo Souto 2023
             </p>
 

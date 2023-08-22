@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { AiOutlineMenu } from 'react-icons/ai'
 import { MdOutlineLightMode } from 'react-icons/md'
 import MobileMenu from './MobileMenu'
+import ThemeSwitcher from './ThemeSwitcher'
 const Header = () => {
     return (
         <header className='px-8 flex items-center justify-between h-[55px] shadow-sm'>
@@ -10,7 +11,7 @@ const Header = () => {
             </Link>
             <div className="flex items-center gap-5 sm:gap-10">
                 <nav className='hidden sm:block'>
-                    <ul className='flex gap-5 text-ligthGray'>
+                    <ul className='flex gap-5 text-ligthGray dark:text-secundaryDark'>
                         <li>
                             <Link href="/">Home</Link>
                         </li>
@@ -23,7 +24,7 @@ const Header = () => {
                     </ul>
                 </nav>
                 <MobileMenu />
-                <MdOutlineLightMode size={23} className="cursor-pointer" />
+                <ThemeSwitcher />
             </div>
 
         </header>

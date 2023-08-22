@@ -13,11 +13,11 @@ const MobileMenu = () => {
             }
 
             {isOpen && (
-                <div className="w-[90%] left-[50%] -translate-x-1/2 border-b border-x border-lightGray p-8 top-[56px] absolute sm:hidden bg-white z-50 overflow-hidden">
+                <div className="w-[90%] left-[50%] -translate-x-1/2 border-b border-x border-lightGray p-8 top-[56px] absolute bg-white dark:bg-[#121212] sm:hidden z-50 overflow-hidden">
 
                     <div className="flex flex-col w-full items-center">
                         <nav>
-                            <ul className="space-y-3 text-darkGray">
+                            <ul className="space-y-3 text-darkGray dark:text-secundaryDark">
                                 <li>
                                     <Link href="/">Home</Link>
                                 </li>
