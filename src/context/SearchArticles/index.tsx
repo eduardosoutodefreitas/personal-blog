@@ -19,10 +19,9 @@ interface SearchArticlesProviderProps {
     children: ReactNode;
 }
 
-const SearchArticlesProvider: React.FC<SearchArticlesProviderProps> = ({ children }) => {
+const SearchArticlesProvider = ({ children }: SearchArticlesProviderProps) => {
     const [searchTerm, setSearchTerm] = useState('');
     const [filteredPosts, setFilteredPosts] = useState<Post[]>([]);
-
 
     useEffect(() => {
         // Filter posts based on search term and selected tag

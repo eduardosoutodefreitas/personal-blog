@@ -1,4 +1,5 @@
 
+import MobileMenuContextProvider from "@/context/MobileMenu"
 import SearchArticlesProvider from "@/context/SearchArticles"
 
 interface AppProviderProps {
@@ -7,7 +8,11 @@ interface AppProviderProps {
 
 const AppProvider = ({ children }: AppProviderProps) => {
     return (
-        <SearchArticlesProvider>{children}</SearchArticlesProvider>
+        <SearchArticlesProvider>
+            <MobileMenuContextProvider>
+                {children}
+            </MobileMenuContextProvider>
+        </SearchArticlesProvider>
     )
 }
 
