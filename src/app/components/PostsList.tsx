@@ -3,7 +3,6 @@ import PaginationControls from '@/components/PaginationControls'
 import PostCard from '@/components/PostCard/PostCard'
 import { SearchArticlesContext } from '@/context/SearchArticles'
 import { usePagination } from '@/hooks'
-import { useSearchParams } from 'next/navigation'
 import { useContext } from 'react'
 const PostList = ({ }) => {
     const { filteredPosts, searchTerm } = useContext(SearchArticlesContext);
@@ -23,7 +22,7 @@ const PostList = ({ }) => {
                 )}
             </section>
             {searchTerm === '' && (
-                <PaginationControls />
+                <PaginationControls postsQuantity={posts.length} />
             )}
         </>
     );

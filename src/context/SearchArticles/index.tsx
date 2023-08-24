@@ -24,7 +24,7 @@ const SearchArticlesProvider = ({ children }: SearchArticlesProviderProps) => {
     const [filteredPosts, setFilteredPosts] = useState<Post[]>([]);
 
     useEffect(() => {
-        // Filter posts based on search term and selected tag
+        // Filter posts based on search term
         const filtered = allPosts.filter(post =>
             (post.title.toLowerCase().includes(searchTerm.toLowerCase()) || post.description?.toLowerCase().includes(searchTerm.toLowerCase()))
         );
