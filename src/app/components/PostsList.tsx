@@ -1,13 +1,14 @@
 'use client'
 import PaginationControls from '@/components/PaginationControls'
 import PostCard from '@/components/PostCard/PostCard'
+import allPosts from '@/content'
 import { SearchArticlesContext } from '@/context/SearchArticles'
 import { usePagination } from '@/hooks'
 import { useContext } from 'react'
-const PostList = ({ }) => {
+const PostList = () => {
     const { filteredPosts, searchTerm } = useContext(SearchArticlesContext);
     const { end, start } = usePagination()
-    const posts = searchTerm ? filteredPosts : filteredPosts.slice(start, end);
+    const posts = searchTerm ? filteredPosts : allPosts.slice(start, end);
 
     return (
         <>
@@ -22,7 +23,7 @@ const PostList = ({ }) => {
                 )}
             </section>
             {searchTerm === '' && (
-                <PaginationControls postsQuantity={posts.length} />
+                <PaginationControls />
             )}
         </>
     );

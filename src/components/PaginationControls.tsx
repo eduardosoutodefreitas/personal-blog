@@ -2,12 +2,10 @@
 
 import { BsCaretLeftFill, BsCaretRightFill } from 'react-icons/bs'
 import { usePagination } from "@/hooks"
-interface PaginationControlsProps {
-    postsQuantity: number
-}
-const PaginationControls = ({ postsQuantity }: PaginationControlsProps) => {
+import allPosts from '@/content'
+const PaginationControls = () => {
     const { page, router } = usePagination()
-    const totalPages = Math.ceil(postsQuantity / 5);
+    const totalPages = Math.ceil(allPosts.length / 5);
     return (
         <div className="flex justify-between items-center">
             <div>
