@@ -20,7 +20,7 @@ const MobileMenu = () => {
                         </div>
                         <AiOutlineClose size={23} className="cursor-pointer top-5 right-5 absolute" onClick={handleIsOpen} />
 
-                        <Link href="/" className='text-xl font-special font-black'>
+                        <Link href="/" className='text-xl font-special font-black' onClick={handleIsOpen}>
                             <span className='text-specialBlue'>Edu</span>Cation
                         </Link>
                         <nav className="my-5">
