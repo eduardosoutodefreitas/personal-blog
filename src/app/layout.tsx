@@ -29,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="pt-br">
       <body className={`${merriweather.variable} ${poppins.variable} font-poppins text-primary dark:text-white`}>
         <AppProvider>
           <Header />
