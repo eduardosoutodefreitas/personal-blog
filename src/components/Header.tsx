@@ -1,6 +1,4 @@
 import Link from 'next/link'
-import { AiOutlineMenu } from 'react-icons/ai'
-import { MdOutlineLightMode } from 'react-icons/md'
 import MobileMenu from './MobileMenu'
 import ThemeSwitcher from './ThemeSwitcher'
 const Header = () => {
