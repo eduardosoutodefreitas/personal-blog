@@ -23,7 +23,7 @@ const PostPage = async ({ params }: PostPageProps) => {
     const formatedDate = formatDate(post.date)
     const formatedReadingTime = Math.ceil(post.readingTime.minutes)
     return (
-        <div className='max-w-3xl mx-auto my-8 px-12 sm:px-16 lg:px-0'>
+        <div className='max-w-3xl mx-auto my-8 px-8 sm:px-16 lg:px-0'>
             <div>
                 <div className='w-full h-[255px] sm:h-[375px] relative mb-3'>
                     <Image src={post.image} className='rounded-md object-cover' fill alt={`post about ${post.title}`} />
