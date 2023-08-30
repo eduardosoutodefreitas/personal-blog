@@ -25,7 +25,7 @@ const MobileMenu = () => {
                                     <Link href="/articles">Artigos</Link>
                                 </li>
                                 <li>
-                                    <Link href="/about">Sobre</Link>
+                                    <Link href="/about">Sobre mim</Link>
                                 </li>
                             </ul>
                         </nav>

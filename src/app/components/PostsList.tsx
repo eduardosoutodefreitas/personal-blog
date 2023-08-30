@@ -12,7 +12,7 @@ const PostList = () => {
 
     return (
         <>
-            <section className="my-8 flex items-center justify-between flex-wrap gap-5 md:gap-x-0 md:gap-y-5 min-h-[50vh]">
+            <section className="my-8 flex items-center justify-between flex-wrap gap-5 md:gap-x-0 md:gap-y-5">
                 {posts.map((post) => (
                     <PostCard key={post._id} post={post} />
                 ))}

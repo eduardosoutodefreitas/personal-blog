@@ -30,10 +30,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${merriweather.variable} ${poppins.variable} font-poppins text-primaryDark`}>
+      <body className={`${merriweather.variable} ${poppins.variable} font-poppins text-primary dark:text-white`}>
         <AppProvider>
           <Header />
-          {children}
+          <main className='min-h-screen'>
+            {children}
+          </main>
           <Footer />
         </AppProvider>
       </body>
