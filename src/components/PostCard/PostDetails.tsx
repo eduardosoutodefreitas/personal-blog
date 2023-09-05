@@ -8,6 +8,7 @@ interface PostDetailsProps {
 }
 
 const PostDetails = ({ date, readingTime }: PostDetailsProps) => {
+    const readingTimeTextFormated = readingTime <= 1 ? 'minuto' : 'minutos'
     return (
         <div className="flex justify-between items-center text-xs text-darkGray dark:text-secundaryDark">
             <div className="flex items-center gap-1">
@@ -16,7 +17,9 @@ const PostDetails = ({ date, readingTime }: PostDetailsProps) => {
             </div>
             <div className="flex items-center gap-1">
                 <AiOutlineClockCircle size={16} className="text-specialBlue" />
-                <span>{readingTime} minutos de leitura</span>
+                <span>
+                    {`${readingTime} ${readingTimeTextFormated} de leitura`}
+                </span>
             </div>
         </div>
     )
