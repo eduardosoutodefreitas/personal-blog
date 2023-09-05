@@ -25,8 +25,8 @@ const PostPage = async ({ params }: PostPageProps) => {
     return (
         <div className='max-w-3xl mx-auto my-8 px-8 sm:px-16 lg:px-0'>
             <div>
-                <div className='w-full h-[255px] sm:h-[375px] relative mb-3'>
-                    <Image src={post.image} className='rounded-md object-cover' fill alt={`post about ${post.title}`} />
+                <div className='w-full h-[255px] sm:h-[405px] relative mb-3'>
+                    <Image src={post.image} className='rounded-md object-cover' fill alt={`post about ${post.title}`} sizes='(max-width:768px) 100vw, 700px' />
                 </div>
                 {
                     post.tags && (
